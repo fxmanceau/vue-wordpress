@@ -87,6 +87,12 @@ export default {
       elements.forEach(element => {
         observer.observe(element);
       });
+    },
+    resizeVisualizer()
+    {
+      for (let id in Chart.instances) {
+        Chart.instances[id].resize();
+      }
     }
   },
   mounted()
@@ -109,6 +115,7 @@ export default {
       this.hammerManager.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL, threshold: 50 });
       this.hammerManager.on("panup pandown", this.scrollController);
     }
+    window.addEventListener('resize', this.resizeVisualizer)
   }
 }
 </script>
