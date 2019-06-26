@@ -227,6 +227,11 @@
     opacity: 0;
     transition: transform 1s cubic-bezier(.54,.1,0,.99), opacity 1s cubic-bezier(.54,.1,0,.99);
 
+    &:hover
+    {
+        transform: translateY(-10px)!important;
+    }
+
     &.on-view
     {
         transform: translateY(0);

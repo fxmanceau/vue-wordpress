@@ -4,4 +4,20 @@ html, body
     color: #FFFFFF;
     font-family: 'Heebo', sans-serif;
     font-size: 62.5%;
+    overflow: hidden;
+    cursor: none;
+}
+a
+{
+    cursor: none;
+}
+#app
+{
+    width: 100%;
+    height: 100vh;
+}
+.global-home
+{
+    position: absolute;
+    top: 0;
 }

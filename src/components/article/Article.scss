@@ -27,7 +27,7 @@ body
     }
 }
 
-.article-container
+.global-article
 {
     width: 100%;
     padding: 0 20%;
@@ -36,6 +36,8 @@ body
     align-items: flex-start;
     justify-content: flex-start;
     margin: 4rem 0rem;
+    position: absolute;
+    top: 0;
 
     h3
     {
@@ -78,9 +80,9 @@ body
 
     p
     {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         font-weight: 100;
-        line-height: 2.5rem;
+        line-height: 2.8rem;
         margin-bottom: 4rem;
 
         transform: translateY(50px);
