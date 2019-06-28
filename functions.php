@@ -22,3 +22,8 @@ function wpdocs_my_search_form( $form ) {
     return $form;
 }
 add_filter( 'get_search_form', 'wpdocs_my_search_form' );
+
+function add_meta_tags() {
+    echo '<meta name="viewport" content="width=device-width,initial-scale=1">';
+  }
+  add_action('wp_head', 'add_meta_tags');
