@@ -1,7 +1,6 @@
 <home-articles>
-    <h2 class="home-intro-articles">L’accessibilité des transports</h2>
     <div class="home-last-articles">
-        <h3 class="last-articles-title">Les derniers articles</h3>
+        <h3 class="last-articles-title">En ce moment</h3>
         <div class="last-articles-container">
             <?php
             $the_query = new WP_Query( array(
@@ -37,7 +36,6 @@
     </div>
     
     <div class="home-all-articles">
-        <h3 class="all-articles-title">L'ensemble des articles</h3>
         <div class="all-articles-container">
         <?php
             if (have_posts()){

@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "hammerjs": "^2.0.8",
+    "lottie-web": "^5.5.5",
     "normalize-wheel": "^1.0.1",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"

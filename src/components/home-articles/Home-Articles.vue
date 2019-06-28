@@ -11,17 +11,30 @@ export default {
   {
     visibileObject(elements)
     {
-      const observer = new IntersectionObserver((observable) =>
-      {
-        if (observable[0].intersectionRatio > 0) {
-          observable[0].target.classList.add('on-view')
-          observer.unobserve(observable[0].target)
-        }
-      }, {threshold: [0]});
-      elements.forEach(element => {
-        observer.observe(element);
-      });
-    }
+      this.options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver(this.intersectCallback, this.options);
+
+      for (let element of elements) {
+          observer.observe(element);
+      }
+    },
+    intersectCallback(entries, observer)
+    {
+      for (let entry of entries) {
+        this.updateSection(entry);
+      }
+    },
+    updateSection(entry)
+    {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('on-view');
+      }
+    },
   },
   mounted()
   {

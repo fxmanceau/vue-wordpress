@@ -1,7 +1,10 @@
 <template>
+<div class="data-container">
   <div class="data-visualization">
     <canvas :id="content.id" class="visualizer"></canvas>
   </div>
+  <slot></slot>
+</div>
 </template>
 
 <script>
@@ -46,7 +49,7 @@ export default {
               yAxes: [{
                 barPercentage: 0.1,
                 gridLines: {
-                  display: true,
+                  display: this.content.showY,
                   color: "rgba(255, 255, 255, 0.1)"
                 }
               }],
@@ -60,6 +63,9 @@ export default {
               display: this.content.title,
               text: this.content.titleText,
               fontSize: this.content.titleSize,
+            },
+            legend: {
+              display: this.content.showLegend,
             }
           }
       });
@@ -80,7 +86,6 @@ export default {
   },
   mounted()
   {
-    console.log(`#${this.content.id}`)
     this.canvasContext = document.querySelector(`#${this.content.id}`).getContext('2d');
     this.ChartVisualizer()
   }

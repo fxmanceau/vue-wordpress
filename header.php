@@ -6,5 +6,9 @@
     </head>
     <body <?php body_class(); ?>>
         <div id="app">
-            <header id="header">
+            <header class="header">
+                <div class="name">
+                    <a href="<?=site_url();?>" class="home-link">Datify</a>
+                </div>
+                <?php get_search_form(); ?>
             </header>

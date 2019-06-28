@@ -1,7 +1,7 @@
 .global-home
 {
     width: 100%;
-    background: #172122;
+    background: #101010;
     transition: opacity .5s ease-out;
 
     &.fade-enter,
@@ -12,17 +12,35 @@
 
     .home-parallax
     {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         width: 100%;
         height: 100vh;
         background: #456f8f;
         overflow: hidden;
 
+        .home-main-title
+        {
+            z-index: 999;
+            width: 100%;
+            text-align: center;
+            font-size: 4rem;
+            line-height: 4.5rem;
+            font-weight: 600;
+            white-space: pre-wrap;
+
+            @media screen and (max-width: 960px){
+                width: 80%;
+            }
+        }
+
         .image
         {
             width: 110%;
             position: absolute;
-            bottom: 0;
+            bottom: -1px;
             left: 50%;
             transform: translateX(-50%);
             margin: auto;
@@ -32,6 +50,11 @@
             {
                 width: 100%;
                 transition: transform 0.9s ease-out;
+            }
+
+            &.sky .inner
+            {
+                opacity: 0;
             }
         }
 
